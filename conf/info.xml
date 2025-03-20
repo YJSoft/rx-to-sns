@@ -4,7 +4,7 @@
 	<description xml:lang="ko">
 		Rhymix에서 글을 등록할 때 X(구 트위터)에 자동으로 글을 올리는 애드온입니다.
 	</description>
-	<version>0.7.0</version>
+	<version>0.7.1</version>
 	<date>2025-03-20</date>
 	<author email_address="admin@wincomi.com" link="https://www.wincomi.com">
 		<name xml:lang="ko">코미 (윈컴이)</name>
@@ -30,11 +30,11 @@
 			<var name="document_update" type="select">
 				<title xml:lang="ko">글 수정시 사용</title>
 				<description xml:lang="ko">글 수정시에도 전송합니다.</description>
-				<options value="Y">
-					<title xml:lang="ko">사용</title>
-				</options>
 				<options value="N">
 					<title xml:lang="ko">사용 안 함</title>
+				</options>
+				<options value="Y">
+					<title xml:lang="ko">사용</title>
 				</options>
 			</var>
 
