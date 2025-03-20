@@ -38,7 +38,7 @@ if (Context::get("act") == "procBoardInsertDocument" && $called_position == "aft
     $message = $document_title . " " . $document_url;
 
     // Twitter
-    if ($addon_info->use_twitter == "Y" && $addon_info->tt_consumer_key && $addon_info->tt_consumer_secret && $addon_info->tt_access_token && $addon_info->tt_access_token_secret) {
+    if ($addon_info->desc_module == "Y" && $addon_info->use_twitter == "Y" && $addon_info->tt_consumer_key && $addon_info->tt_consumer_secret && $addon_info->tt_access_token && $addon_info->tt_access_token_secret) {
         require_once "twitteroauth/twitteroauth.php";
         require_once "twitteroauth/OAuth.php";
         $tt_oauth = new TwitterOAuth($addon_info->tt_consumer_key, $addon_info->tt_consumer_secret, $addon_info->tt_access_token, $addon_info->tt_access_token_secret);
