@@ -18,7 +18,7 @@ class Response
     /** @var array HTTP headers from the most recent request */
     private array $headers = [];
     /** @var array|object|null Response body from the most recent request */
-    private array|object|null $body = [];
+    private $body = [];
     /** @var array HTTP headers from the most recent request that start with X */
     private array $xHeaders = [];
 

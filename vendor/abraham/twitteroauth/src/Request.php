@@ -26,7 +26,7 @@ class Request
     public function __construct(
         string $httpMethod,
         string $httpUrl,
-        ?array $parameters = [],
+        ?array $parameters = []
     ) {
         $parameters = array_merge(
             Util::parseParameters(parse_url($httpUrl, PHP_URL_QUERY)),
@@ -54,7 +54,7 @@ class Request
         string $httpMethod,
         string $httpUrl,
         array $parameters = [],
-        array $options = [],
+        array $options = []
     ) {
         $defaults = [
             'oauth_version' => Request::$version,
@@ -251,7 +251,7 @@ class Request
     public function signRequest(
         SignatureMethod $signatureMethod,
         Consumer $consumer,
-        Token $token = null,
+        Token $token = null
     ) {
         $this->setParameter(
             'oauth_signature_method',
@@ -271,7 +271,7 @@ class Request
     public function buildSignature(
         SignatureMethod $signatureMethod,
         Consumer $consumer,
-        Token $token = null,
+        Token $token = null
     ): string {
         return $signatureMethod->buildSignature($this, $consumer, $token);
     }
