@@ -4,7 +4,7 @@
 	<description xml:lang="ko">
 		Rhymix에서 글을 등록할 때 X(구 트위터)에 자동으로 글을 올리는 애드온입니다.
 	</description>
-	<version>0.5.0</version>
+	<version>0.5.1</version>
 	<date>2025-03-20</date>
 	<author email_address="admin@wincomi.com" link="https://www.wincomi.com">
 		<name xml:lang="ko">코미 (윈컴이)</name>
@@ -42,7 +42,7 @@
 				<title xml:lang="ko">사용할 게시판 설정</title>
 				<description xml:lang="ko">아래 '대상'에서 설정하세요. 설정을 하지 않을 경우, 모든 게시판에서 작동됩니다.</description>
 				<options value="N">
-					<title xml:lang="ko">확인해보겠습니다.</title>
+					<title xml:lang="ko">(확인후 변경하지 않으면 동작하지 않습니다)</title>
 				</options>
 				<options value="Y">
 					<title xml:lang="ko">확인하였습니다.</title>
