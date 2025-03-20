@@ -3,6 +3,9 @@ if (!defined("__XE__")) {
     exit();
 }
 
+require_once "vendor/autoload.php";
+use Abraham\TwitterOAuth\TwitterOAuth;
+
 /**
  * @file to_sns.addon.php
  * @author Wincomi (admin@wincomi.com)
@@ -39,9 +42,8 @@ if (Context::get("act") == "procBoardInsertDocument" && $called_position == "aft
 
     // Twitter
     if ($addon_info->desc_module == "Y" && $addon_info->use_twitter == "Y" && $addon_info->tt_consumer_key && $addon_info->tt_consumer_secret && $addon_info->tt_access_token && $addon_info->tt_access_token_secret) {
-        require_once "twitteroauth/twitteroauth.php";
-        require_once "twitteroauth/OAuth.php";
         $tt_oauth = new TwitterOAuth($addon_info->tt_consumer_key, $addon_info->tt_consumer_secret, $addon_info->tt_access_token, $addon_info->tt_access_token_secret);
+        $tt_oauth->setApiVersion('2');
         $tt_oauth->post("tweets", ["text" => $message]);
     }
 

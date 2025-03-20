@@ -1,0 +1,15 @@
+{
+    "name": "yjsoft/rx-to-sns",
+    "type": "project",
+    "require": {
+        "rhymix/composer-stub": "dev-master",
+        "abraham/twitteroauth": "^7.0"
+    },
+    "license": "GPL-2.0-only",
+    "authors": [
+        {
+            "name": "YJSoft",
+            "email": "yjsoft@yjsoft.xyz"
+        }
+    ]
+}
