@@ -7,8 +7,7 @@ if(!defined("__XE__"))
 * @brief Send article to sns
 */	
 
-if($addon_info->only_admin != "N")
-{
+if($addon_info->only_admin != "N") {
 	$logged_info = Context::get("logged_info");
 	
 	if($logged_info->is_admin != "Y") {
@@ -16,13 +15,12 @@ if($addon_info->only_admin != "N")
 	}
 }
 
-if(Context::get("act") == "procBoardInsertDocument" && $called_position == "after_module_proc" && $this->toBool())
-{
+if(Context::get("act") == "procBoardInsertDocument" && $called_position == "after_module_proc" && $this->toBool()) {
 
 	$document_srl = $this->get("document_srl");
 	$oDocumentModel = &getModel("document");
 	$oDocument = $oDocumentModel->getDocument($document_srl);
-
+	
 	if($addon_info->document_update == 'N' && $oDocument->isExists() && $oDocument->get('status') !== 'TEMP') {
 		return;
 	}
@@ -46,7 +44,7 @@ if(Context::get("act") == "procBoardInsertDocument" && $called_position == "afte
 		require_once('twitteroauth/twitteroauth.php');
 		require_once('twitteroauth/OAuth.php');
 		$tt_oauth = new TwitterOAuth($addon_info->tt_consumer_key, $addon_info->tt_consumer_secret, $addon_info->tt_access_token, $addon_info->tt_access_token_secret);
-		$tt_oauth->post("statuses/update", array("status" => $message));
+		$tt_oauth->post("tweets", array("text" => $message));
 	}
 
 	// 글자 수 자르기
